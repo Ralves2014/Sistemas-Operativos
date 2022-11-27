@@ -1,0 +1,73 @@
+/*
+            if (p[proc].all_times[p[proc].position]==0)
+            {
+                
+                if (p[proc].position%2==0)
+                {
+                    Enqueue(proc,Block);
+                    p[proc].state=BLCK;
+                    p->CPU=-5;
+                }
+                else
+                {
+                    Dequeue(Block);
+                    Enqueue(proc,Ready);
+                    p[proc].state=READY;
+                }
+                p[proc].position+=1;
+            }
+            
+            
+            if (p[proc].all_times[p[proc].position]!=-1)
+            {
+                
+                if (!IsEmpty(Ready) && READY_TO_RUN(Ready,p) && Front(Ready)==proc && p[proc].state==READY)
+                {
+                    Dequeue(Ready);
+                    p->CPU=proc;              
+                    //printf("Valor p->CPU depois do if %d  ", p->CPU);
+                    //printf("Processo que entro:%d  ", p->CPU);
+                    p[proc].state==RUN;
+                    strcat(line,"RUN  ");
+                    p[proc].all_times[p[proc].position]-=1;
+
+                }
+                else if (p[proc].state==READY && p->CPU!=proc)
+                {
+                    strcat(line,"READY  ");
+                }
+                else if (p->CPU==proc)
+                {
+                    strcat(line,"RUN  ");
+                    p[proc].state=RUN;
+                    p[proc].all_times[p[proc].position]-=1;
+                    
+                    
+                }
+                else if (Front(Block)==proc)
+                {
+                    //printf("O proc %d entrou na Queue BLCK ",proc);
+                    strcat(line,"BLCK  ");
+                    p[proc].state==BLCK;
+                    p[proc].all_times[p[proc].position]-=1;
+                    
+                }
+                else if (p[proc].state==BLCK && Front(Block)!=proc)
+                {
+                    strcat(line,"READY1  ");
+                }
+                       
+            }
+            else if (p[proc].state==EXIT)
+            {
+                strcat(line,"      ");
+            }
+            else if (p[proc].state!=EXIT)
+            {
+                //printf("Esta em exit o processo %d ", proc);
+                p[proc].state=EXIT;
+                strcat(line,"EXIT  ");
+            }
+
+
+            */
